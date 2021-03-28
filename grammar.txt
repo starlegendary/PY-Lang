@@ -1,0 +1,33 @@
+#
+data type:
+  fun
+  obj
+  nth '_'
+  arr '->',':'
+  seq ',', ';'
+  {
+  }
+
+-> means convert
+(if not indicate, f[a] = a, does nothing)
+
+every function doesn't change anything
+-> only change things when it is outside the function however if that variable comes from another file; it doesn't change it, as the whole file itself is a function
+
+f: '0' -> 'nothing' means f['0'] = 'nothing' which means '0' is converted to 'nothing'
+f '0'; print nothing
+
+g: a -> a + 1 means f[a] = a+ 1
+
+h: a {'0' -> 'nothing'; a -> a + 1; }
+
+comp f :g :a -> g f a;
+means a is converted to g[f[a]] or g[f][a]
+g[f] = g[f[]]
+
+meta: a{'0' -> nothing; a: 'n' -> '1', b -> a + b;} 
+(function a is define under meta, it has no meaning outside of it)
+h -> comp g f;
+
+means f['0'] = nothing; else f[a] = a+1
+#
